@@ -17,7 +17,7 @@ export default{
 
 #main-barnner{
     background-color: aliceblue;
-    background-image: url('../../public/img/hamberguer-barnner.jpeg');
+    background-image: url('/public/img/hamberguer-barnner.jpeg');
     background-position: 0 -250px;
     background-size: cover;
     display: flex;
@@ -28,7 +28,7 @@ export default{
 
 #main-barnner h1{
     color:#000;
-    background-color: #fff;
+    background-color: #f1f1f1;
     padding: 10px 20px;
     text-align: center;
 }

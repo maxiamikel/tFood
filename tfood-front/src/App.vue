@@ -28,14 +28,14 @@ export default {
   }
 
   .main-container{
-    margin: 2px 60px;
-    min-height: 470px;
+    margin: 50px;
+    min-height: 250px;
   }
 
   h1{
     font-size: 38px;
     color: #333333;
     text-align: center;
-    margin-bottom: 20px;;
+    bottom: 25px;;
   }
 </style>

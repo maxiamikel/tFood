@@ -18,8 +18,8 @@ export default {
 
 <style scoped>
     #nav{
-        background-color: #CD853F;
-        border-bottom: solid 3px  #666;
+        background-color: #5F9EA0;
+        border-bottom: solid 3px  #CD853F;
         padding: 15px 45px;
         justify-content: flex-end;
         display: flex;
@@ -37,7 +37,7 @@ export default {
     }
 
     #nav a:hover{
-        color:  #B0E0E6;
+        color:  #FFF;
     }
 
     #nav #logo_url{

@@ -14,35 +14,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.maxi.tFoodback.domains.User;
-import com.maxi.tFoodback.dtos.UserDTO;
-import com.maxi.tFoodback.services.UserService;
+import com.maxi.tFoodback.domains.Carne;
+import com.maxi.tFoodback.dtos.CarneDTO;
+import com.maxi.tFoodback.services.CarneService;
 
 @RestController
-@RequestMapping(value = "/api/users")
+@RequestMapping(value = "/api/carnes")
 @CrossOrigin("*")
-public class UserController {
+public class CarneController {
 
     @Autowired
-    private UserService usertService;
+    private CarneService service;
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {
-        User obj = usertService.findById(id);
+        Carne obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 
     @GetMapping(value = "/")
-    public ResponseEntity<List<User>> findAll() {
-        List<User> list = usertService.findAll();
+    public ResponseEntity<List<Carne>> findAll() {
+        List<Carne> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @PostMapping(value = "/create")
-    public ResponseEntity<?> createUser(@RequestBody UserDTO obj) {
+    public ResponseEntity<?> create(@RequestBody CarneDTO obj) {
+        Carne carne = service.create(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-        User user = usertService.create(obj);
-        return ResponseEntity.created(uri).body(user);
+
+        return ResponseEntity.created(uri).body(carne);
     }
 
 }
